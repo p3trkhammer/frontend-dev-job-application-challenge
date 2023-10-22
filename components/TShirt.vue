@@ -1,4 +1,5 @@
 <template>
+  <div class="container">
   <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
        y="0px" viewBox="0 0 520 580" style="enable-background:new 0 0 520 580;" xml:space="preserve">
               <path class="st0" d="M447.3,61.7C428.6,51.7,324.9,10,324.9,10S308.3,30.5,260,30.5S195.1,10,195.1,10S91.4,51.7,72.7,61.7
@@ -67,11 +68,41 @@
     <path class="st4" d="M187.3,13.1c0,0,11.9,71.7,72,71.7s74.8-71.1,74.8-71.1"/>
     <path class="st3" d="M198.5,27.3c0,0,15.9,16.2,58.7,16.2s61-13.6,61-13.6"/>
       </svg>
+    <div class="overlay-container">
+  <img :src="motiv" alt="Überlagerndes Bild" class="overlapping-image">
+    </div>
+    </div>
+
 </template>
 
 <style type="text/css">
+.container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
 svg {
-  width: 100px
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.overlapping-image {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .st0 {
@@ -106,16 +137,33 @@ svg {
 <script lang="ts">
 
 import {useColorStore} from "~/stores/colors";
+import {useMotivStore} from "~/stores/motives";
+
 import {computed, defineComponent} from "vue";
 
 export default defineComponent({
   setup() {
     const colorStore = useColorStore();
+    const motivStore = useMotivStore();
+
 
     const color = computed(() => colorStore.selectedColor.color);
+    const colorName = computed(() => colorStore.selectedColor.name);
+    const colorPrice = computed(() => colorStore.selectedColor.price)
+
+    const motiv = computed(() => motivStore.selectedMotiv.img)
+    const motivName = computed(() => motivStore.selectedMotiv.name)
+    const motivPrice = computed(() => motivStore.selectedMotiv.price)
+
+    //const price = colorPrice + motivPrice;
 
     return {
-      color
+      color,
+      colorName,
+      colorPrice,
+      motivName,
+      motiv,
+      motivPrice
     }
   }
 })

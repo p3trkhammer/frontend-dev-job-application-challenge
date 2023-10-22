@@ -7,7 +7,11 @@
     </header>
     <br>
     <colorSelector></colorSelector>
+    <br>
     <TShirt></TShirt>
+    <br>
+    <motive-selector></motive-selector>
+    <br>
     <p>
       Design a shirt here
     </p>
@@ -19,5 +23,6 @@
 
 
 
+import MotiveSelector from "~/components/MotiveSelector.vue";
 </script>
 
