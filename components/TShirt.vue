@@ -115,10 +115,12 @@ svg {
 
 .st1 {
   fill: v-bind('color');
+  filter: brightness(.8);
 }
 
 .st2 {
   fill: v-bind('color');
+  filter: brightness(.9);
 }
 
 .st3 {
