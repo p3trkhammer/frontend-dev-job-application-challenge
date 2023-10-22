@@ -1,16 +1,21 @@
 <template>
   <div class="about">
-    <header>
-      <h1>About this project</h1>
-      <button @click="$router.back()">Back</button>
-    </header>
-    <br>
+
     <p>
       This is a demo page
     </p>
-    <br>
+
   </div>
 </template>
+
+<style>
+.about {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
 
 <script setup lang="ts">
 

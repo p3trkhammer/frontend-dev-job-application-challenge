@@ -1,17 +1,15 @@
 <template>
   <div class="orderSuccess">
-    <header>
-      <h1>Order Success</h1>
-      <a><NuxtLink to="/">Back</NuxtLink></a>
-    </header>
-    <br>
-    <p>
+     <p>
       Thank you for your Order
     </p>
-    <br>
     <a><NuxtLink to="/">Design another shirt</NuxtLink></a>
   </div>
 </template>
+
+<style>
+
+</style>
 
 <script setup lang="ts">
 

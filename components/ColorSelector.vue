@@ -1,7 +1,8 @@
 <template>
   <select v-model="selectedColor" @change="setSelectedColor">
     <option v-for="(item, key) in colors" :value="key">
-      {{ item }}
+      <div class="farb-container"></div>
+      {{ item.name }}
     </option>
   </select>
 </template>
@@ -32,6 +33,10 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-
+<style>
+.farb-container {
+  width: 10px;
+  height: 10px;
+  background-color: v-bind('selectedColor');
+}
 </style>

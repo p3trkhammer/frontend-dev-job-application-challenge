@@ -1,10 +1,7 @@
 <template>
   <div class="checkout">
-    <header>
-      <h1>Checkout</h1>
-      <a><NuxtLink to="/">Back</NuxtLink></a>
-    </header>
-    <br>
+
+
     <p>
       This is your order
     </p>

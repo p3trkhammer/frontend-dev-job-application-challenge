@@ -1,7 +1,8 @@
 <template>
-  <select v-model="selectedMotiv" @change="setSelectedMotiv">
+  <select v-model="selectedMotiv" @change="setSelectedMotiv" class="image-select">
     <option v-for="(item, key) in motives" :value="key">
-      {{ item }}
+       <img :src="item.img" alt="missing Image">
+      {{item.name}}
     </option>
   </select>
 </template>
@@ -32,6 +33,18 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style>
+.image-select {
+  background-color: white;
+  padding: 5px 30px 5px 10px;
+  background-size: 20px 20px;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
 
+.image-select option {
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 5px center;
+}
 </style>

@@ -1,13 +1,36 @@
 <template>
-  <div class="relative">
+  <header>
+    <NavBar></NavBar>
+  </header>
+  <body>
+  <div class="relative body">
     <NuxtPage></NuxtPage>
   </div>
-  <div>
+  </body>
     <footer>
-      <a><NuxtLink to="/about">About this project</NuxtLink></a>
+      <a class="footer"><NuxtLink class="left-element" to="/about">About this project</NuxtLink></a>
     </footer>
-  </div>
 </template>
+
+<style>
+
+.body {
+  height: 60vh;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: darkgrey;
+  height: 20vh;
+}
+.left-element {
+  margin-right: auto;
+}
+</style>
 
 <script setup lang="ts">
 </script>

@@ -1,28 +1,46 @@
+
+
+
 <template>
-  <div class="design">
-    <header>
-      <h1>Design your shirt</h1>
-      <span>Price</span>
-      <a><NuxtLink to="/checkout">Checkout</NuxtLink></a>
-    </header>
-    <br>
-    <colorSelector></colorSelector>
-    <br>
-    <TShirt></TShirt>
-    <br>
-    <motive-selector></motive-selector>
-    <br>
-    <p>
-      Design a shirt here
-    </p>
-    <br>
+  <div class="flex-container thin">
+    <div class="flex-child">
+      <colorSelector></colorSelector>
+    </div>
+    <div class="flex-child">
+      <TShirt></TShirt>
+    </div>
+    <div class="flex-child">
+      <motive-selector></motive-selector>
+    </div>
   </div>
+
 </template>
+<style>
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Gleichmäßige Verteilung der Kind-Elemente */
+  padding: 10px; /* Platz um den Flex-Container hinzufügen */
+}
+
+.thin {
+  width: 80%;
+  align-items: center;
+  height: 80%;
+  margin: 0 auto; /* Zentriert den Container horizontal */
+}
+
+.flex-child {
+  flex: 1; /* Die Kind-Elemente erhalten den gleichen Platz auf der horizontalen Achse */
+  padding: 10px;
+  margin: 2px;
+  max-width: 20%; /* Begrenzen der Kind-Elemente auf 20% Breite */
+}
+
+
+</style>
 
 <script setup lang="ts">
 
 
-
-import MotiveSelector from "~/components/MotiveSelector.vue";
 </script>
 
