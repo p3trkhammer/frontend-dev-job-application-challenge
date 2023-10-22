@@ -15,7 +15,7 @@
 <style>
 
 .body {
-  height: 60vh;
+  height: 80vh;
 }
 
 .footer {
@@ -25,7 +25,7 @@
   align-items: center;
   padding: 10px;
   background-color: darkgrey;
-  height: 20vh;
+  height: 10vh;
 }
 .left-element {
   margin-right: auto;
