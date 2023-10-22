@@ -6,6 +6,8 @@
       <a><NuxtLink to="/checkout">Checkout</NuxtLink></a>
     </header>
     <br>
+    <colorSelector></colorSelector>
+    <TShirt></TShirt>
     <p>
       Design a shirt here
     </p>
@@ -14,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+
 
 
 </script>

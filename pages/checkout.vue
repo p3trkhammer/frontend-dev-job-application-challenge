@@ -8,6 +8,7 @@
     <p>
       This is your order
     </p>
+    <TShirt></TShirt>
     <p>
       Enter personal data
     </p>
@@ -19,4 +20,5 @@
 
 <script setup lang="ts">
 
+import {TShirt} from "#components";
 </script>
