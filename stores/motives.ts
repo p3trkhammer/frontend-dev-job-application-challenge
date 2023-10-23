@@ -1,4 +1,5 @@
 import {defineStore} from "pinia";
+import {ref} from 'vue'
 
 const motives: any[] = await getMotivesfromAPI();
 async function getMotivesfromAPI(this: any) {
@@ -16,8 +17,8 @@ export const useMotivStore = defineStore('motiv', {
         }
     },
     actions: {
-        setSelected(value: any){
-            this.selectedMotiv = motives[value.value];
+        setSelected(index: any){
+            this.selectedMotiv = motives[index.value];
         }
     },
 })

@@ -1,4 +1,5 @@
 import {defineStore} from "pinia";
+import {ref} from 'vue'
 
 const colors: any[] = await getColorsfromAPI();
 async function getColorsfromAPI(this: any) {
@@ -16,8 +17,8 @@ export const useColorStore = defineStore('color', {
         }
     },
     actions: {
-       setSelected(value: any){
-           this.selectedColor = colors[value.value];
+       setSelected(index: any){
+           this.selectedColor = colors[index.value];
        }
     },
 })
