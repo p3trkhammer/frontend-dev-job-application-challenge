@@ -1,26 +1,18 @@
 <template>
-    <div class="flex-container thin">
+  <div class="flex-container thin">
 
-      <div class="flex-child">
-        <TShirt></TShirt>
-      </div>
-      <div class="flex-child">
-        <p>
-          Order Summary
-        </p>
-      </div>
-      <div class="flex-child">
-        <p>
-          Enter personal data
-        </p>
-        <div>
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            <NuxtLink to="/orderSuccess">Buy</NuxtLink>
-          </button>
-          <!--    should not be a Router Link, but a button -> Post Method -> handling return Value -> Reroute to design page-->
-        </div>
-      </div>
+    <div class="flex-child shirt">
+      <TShirt></TShirt>
     </div>
+    <div class="flex-child">
+      <p>
+        Order Summary
+      </p>
+    </div>
+    <div class="flex-child">
+      <PersonalDataCollector></PersonalDataCollector>
+    </div>
+  </div>
 
 </template>
 
@@ -29,6 +21,8 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .thin {

@@ -3,7 +3,7 @@
     <div class="flex-child">
       <colorSelector></colorSelector>
     </div>
-    <div class="flex-child">
+    <div class="flex-child shirt">
       <TShirt></TShirt>
     </div>
     <div class="flex-child">
@@ -15,6 +15,8 @@
 <style>
 .flex-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
 }
@@ -32,7 +34,6 @@
   margin: 2px;
   max-width: 20%;
 }
-
 </style>
 
 <script setup lang="ts">
