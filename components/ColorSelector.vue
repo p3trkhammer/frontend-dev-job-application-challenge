@@ -10,6 +10,8 @@
 <style>
 .color-select {
   width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .color-row {
