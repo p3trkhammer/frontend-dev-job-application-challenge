@@ -144,6 +144,8 @@ svg {
 
 import {useColorStore} from "~/stores/colors";
 import {useMotivStore} from "~/stores/motives";
+import {useOrderInfoStore} from "~/stores/orderInfo";
+
 
 import {computed, defineComponent} from "vue";
 
@@ -151,24 +153,33 @@ export default defineComponent({
   setup() {
     const colorStore = useColorStore();
     const motivStore = useMotivStore();
+    const orderInfoStore = useOrderInfoStore();
 
 
     const color = computed(() => colorStore.selectedColor.color);
     const colorName = computed(() => colorStore.selectedColor.name);
     const colorPrice = computed(() => colorStore.selectedColor.price)
 
-    const motiv = computed(() => motivStore.selectedMotiv.img)
-    const motivName = computed(() => motivStore.selectedMotiv.name)
-    const motivPrice = computed(() => motivStore.selectedMotiv.price)
+    const motiv = computed(() => motivStore.selectedMotiv.img);
+    const motivName = computed(() => motivStore.selectedMotiv.name);
+    const motivPrice = computed(() => motivStore.selectedMotiv.price);
 
-    const price = computed(colorPrice.value + motivPrice.value);
+    const priceTotal = computed(() => colorPrice.value + motivPrice.value);
+
+    orderInfoStore.setMotivName(motivName.value);
+    orderInfoStore.setColorName(colorName.value);
+    orderInfoStore.setMotivPrice(motivPrice.value);
+    orderInfoStore.setColorPrice(colorPrice.value);
+
+    orderInfoStore.setTotal(priceTotal.value);
+
 
     return {
       color,
       colorName,
       motivName,
       motiv,
-      price
+      priceTotal
     }
   }
 })

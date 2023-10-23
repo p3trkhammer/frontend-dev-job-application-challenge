@@ -40,6 +40,8 @@ export default defineComponent({
   background-size: 20px 20px;
   background-position: right center;
   background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .image-select option {

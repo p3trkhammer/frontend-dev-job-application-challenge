@@ -5,9 +5,7 @@
       <TShirt></TShirt>
     </div>
     <div class="flex-child">
-      <p>
-        Order Summary
-      </p>
+      <OrderSummary></OrderSummary>
     </div>
     <div class="flex-child">
       <PersonalDataCollector></PersonalDataCollector>
