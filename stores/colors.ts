@@ -18,9 +18,6 @@ export const useColorStore = defineStore('color', {
     actions: {
        setSelected(value: any){
            this.selectedColor = colors[value.value];
-       },
-        getSelected() {
-           return this.selectedColor
-        }
+       }
     },
 })

@@ -1,27 +1,26 @@
 <template>
-  <select v-model="selectedColor" @change="setSelectedColor" class="color-select">
-    <option v-for="(item, key) in colors" :value="key">
-      <div class="color-indicator" :style="{ backgroundColor: item.color }"></div>
-      <div class="option-label">{{ item.name }}</div>
+  <select multiple size="4" v-model="selectedColor" @change="setSelectedColor" class="color-select">
+    <option v-for="(item, key) in colors" :value="key" class="color-row">
+      <div class="color-row">
+        <div class="option-label">{{ item.name }}</div>
+      </div>
     </option>
   </select>
 </template>
-
 <style>
 .color-select {
-  background-color: white;
-  padding: 5px 30px 5px 10px;
-  background-size: 20px 20px;
-  background-position: right center;
-  background-repeat: no-repeat;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 200px;
 }
 
-.color-select option {
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  background-position: 5px center;
+.color-row {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  background-color: v-bind('selectedColor');
+}
+
+.option-label {
+  font-size: 16px; /* Adjust the font size as needed */
 }
 </style>
 
@@ -35,6 +34,7 @@ export default defineComponent({
     const colorStore = useColorStore();
 
     const colors = colorStore.colors;
+
 
     const selectedColor = ref(colorStore.selectedColor)
 

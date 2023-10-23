@@ -14,7 +14,7 @@
         </p>
       </div>
       <div class="right-element">
-        <span>{{ motivPrice }}</span>
+        <span>{{ motivPrice.toFixed(2) }}</span>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
         </p>
       </div>
       <div class="right-element">
-        <span>{{ colorPrice }}</span>
+        <span>{{ colorPrice.toFixed(2) }}</span>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
         </p>
       </div>
       <div class="right-element">
-        <span>{{ total }}</span>
+        <span>{{ total.toFixed(2) }}</span>
       </div>
     </div>
 
