@@ -22,7 +22,7 @@
   justify-content: space-between;
   padding: 10px;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .thin {
@@ -34,9 +34,11 @@
 
 .flex-child {
   flex: 1;
+  flex-shrink: 0;
   padding: 10px;
   margin: 2px;
   max-width: 20%;
+  min-width: 200px;
 }
 
 </style>
